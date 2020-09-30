@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue-cli-plugin-auto-routing "></script>
 </head>
-<body class="bg-gray-200">
+<body class="bg-gray-300">
     <div class="container mx-auto content-center justify-center">
         <div class="w-full flex-col content-center">
             <img src="assets/img/studioghibli.png" class="h-48 sm:h-64 mx-auto" />
@@ -19,8 +19,8 @@
                 <input v-model="searchText" class="bg-purple-white shadow-lg rounded border-0 p-3 my-4 mx-auto" placeholder="Search...">
             </div>    
             <div v-if="items" class="flex flex-wrap">
-                <div v-for="item in itemsSearched" class="max-w-sm rounded-lg overflow-hidden shadow-lg mx-2 mb-4 cursor-pointer transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105  flex-auto">
-                    <div class="px-6 py-4  bg-gradient-to-r from-red-500">
+                <a href="#" v-for="item in itemsSearched" class="block max-w-sm rounded-lg overflow-hidden shadow-lg mx-2 mb-4 cursor-pointer transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105  flex-auto" :key="item.id">
+                    <div class="px-6 py-4  bg-gradient-to-r from-gray-700">
                       <div class="font-bold text-xl  p-4">
                           <h2 class="text-center">
                             {{ item.title }}
@@ -37,7 +37,7 @@
                       <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Director : {{ item.director }}</span>
                       <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Producer : {{ item.producer }}</span>
                     </div>
-                </div>
+                </a>
             </div>
         
         </div>
